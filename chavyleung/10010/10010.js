@@ -25,8 +25,9 @@ let gosign = JSON.parse(chavy.getdata("chavy_gosign_10010")||chavygosign)
 
 ;(sign = async () => {
     chavy.log(`🔔 ${cookieName}`)
-    try{await loginapp()}catch(e){}
-    if (gosign == true) await signapp()
+//     try{await loginapp()}catch(e){}
+//     if (gosign == true) 
+        await signapp()
     if (golottery == true) {
       if (VAL_loginlotteryurl && VAL_findlotteryurl) await loginlottery()
       if (signinfo.encryptmobile) {
