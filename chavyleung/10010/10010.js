@@ -45,7 +45,7 @@ let gosign = JSON.parse(chavy.getdata("chavy_gosign_10010")||chavygosign)
 
 function loginapp() {
     return new Promise((resolve, reject) => {
-        const url = { url: VAL_loginurl, headers: JSON.parse(VAL_loginheader) }
+        const url = { url: VAL_loginurl, headers: JSON.parse(VAL_loginheader||"{}") }
         chavy.post(url, (error, response, data) => {
             try {
                 resolve()
@@ -62,7 +62,7 @@ function loginapp() {
 function signapp() {
     return new Promise((resolve, reject) => {
         if (VAL_signurl.endsWith('.do')) VAL_signurl = VAL_signurl.replace('.do', '')
-        const url = { url: 'https://act.10010.com/SigninApp/signin/daySign', headers: JSON.parse(VAL_signheader) }
+        const url = { url: 'https://act.10010.com/SigninApp/signin/daySign', headers: JSON.parse(VAL_signheader||"{}") }
         chavy.post(url, (error, response, data) => {
             try {
                 signinfo.signapp = JSON.parse(data)
