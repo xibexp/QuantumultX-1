@@ -171,7 +171,7 @@ function getinfo() {
 function showmsg() {
     let subTitle = ''
     let detail = ''
-    console.log(signinfo)
+    console.log(String(signinfo))
     // 签到结果
     if (gosign == true) {
       if (signinfo.signapp.status == '0000') {
